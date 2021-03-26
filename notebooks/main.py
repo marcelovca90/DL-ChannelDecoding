@@ -29,7 +29,7 @@ from keras.models import Sequential
 from keras.layers.core import Dense, Lambda
 from keras import backend as K
 import matplotlib.pyplot as plt
-get_ipython().run_line_magic('matplotlib', 'inline')
+# get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 # # Parameters
