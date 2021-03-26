@@ -25,7 +25,6 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   python3-h5py \
   python3-yaml \
   python3-matplotlib \
-  software-properties-common \
   && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
