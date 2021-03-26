@@ -13,6 +13,7 @@
 # limitations under the License.
 # ==============================================================================
 
+c = get_config()
 c.NotebookApp.allow_root = True
 c.NotebookApp.ip = '*'
 c.NotebookApp.port = 8888
