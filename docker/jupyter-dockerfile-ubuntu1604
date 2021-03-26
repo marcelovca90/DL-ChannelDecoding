@@ -1,6 +1,10 @@
 FROM nvidia/cuda:11.2.2-cudnn8-runtime-ubuntu16.04
 
-MAINTAINER Tobias Gruber 
+MAINTAINER Tobias Gruber
+
+##############
+## PACKAGES ##
+##############
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   build-essential \
@@ -26,12 +30,6 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
-#########
-## PIP ##
-#########
-
-# RUN pip3 install --upgrade pip
-
 
 ############
 ## THEANO ##
@@ -54,9 +52,9 @@ RUN pip3 install tensorflow==0.12.1
 RUN pip3 install scipy keras
 
 
-##############################
-## UPDATE PYTHON 3.5 TO 3.6 ##
-##############################
+################
+## PYTHON 3.6 ##
+################
 
 RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y python3.6
@@ -71,7 +69,6 @@ RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
 # install Jupyter
 RUN wget https://github.com/jupyter/notebook/archive/refs/tags/4.4.1.tar.gz
 RUN tar -xvzf 4.4.1.tar.gz && cd notebook-4.4.1/ && pip3 install --pre -e .
-RUN jupyter --version
 
 # Jupyter setup
 COPY jupyter_notebook_config.py /root/.jupyter/

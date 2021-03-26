@@ -24,4 +24,3 @@ docker run -it --rm --privileged \
            --env="$theano" \
 	    --volume=$mountpath:/root/data \
            gruber/nn-decoding-jupyter
-
