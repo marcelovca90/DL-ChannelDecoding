@@ -268,7 +268,7 @@ elif code == 'random':
 
 
 model.summary()
-history = model.fit(x, d, batch_size=batch_size, nb_epoch=nb_epoch, verbose=0, shuffle=True)
+history = model.fit(x, d, batch_size=batch_size, epochs=nb_epoch, verbose=0, shuffle=True)
 
 
 # # Test NN
