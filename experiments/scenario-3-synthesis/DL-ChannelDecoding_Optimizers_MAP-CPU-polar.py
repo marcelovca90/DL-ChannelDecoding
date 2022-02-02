@@ -82,14 +82,14 @@ print("\nLocal devices:", device_lib.list_local_devices())
 # In[ ]:
 
 
-k = 8                                      # number of information bits
-N = 16                                     # code length
-train_SNR_Eb = {'polar' : 1, 'random' : 4} # training-Eb/No
+k = 8                                        # number of information bits
+N = 16                                       # code length
+train_SNR_Eb = {'polar' : 1, 'random' : 4}   # training-Eb/No
 
 exponents = [20]                             # exponents of learning epochs (n)
 nb_epochs = [int(2**x) for x in exponents]   # number of learning epochs (2^n)
 codes = ['polar']                            # type of code ('random' or 'polar')
-design = [1024, 512, 256, 128, 64, 32]       # each list entry defines the number of nodes in a layer
+design = [512, 256, 128, 64, 32]             # each list entry defines the number of nodes in a layer
 batch_size = 256                             # size of batches for calculation the gradient
 LLR = False                                  # 'True' enables the log-likelihood-ratio layer
 loss = 'mse'                                 # or 'binary_crossentropy'
@@ -300,7 +300,7 @@ for code in codes:
         
         # https://stackoverflow.com/questions/15571267/python-a4-size-for-a-plot
         #fig = plt.figure(figsize=(11.69,8.27))
-        fig_ans, ax_ans = plt.subplots(1, 1, figsize=(16,9))
+        fig_ans, ax_ans = plt.subplots(1, 1, figsize=(11.75,8.25))
 
         for optimizer in optimizers:
             
@@ -349,8 +349,6 @@ for code in codes:
             ############    
 
             model.summary()
-            
-            csv_logger = CSVLogger(f'logs/cpu_code={code}_optimizer={optimizer}_epochs=2^{nb_epoch_exp}_map_training.log')
 
             start_time = timeit.default_timer()
             print(f'{datetime.now()}\t{code} @ {optimizer} @ Mep=2^{nb_epoch_exp} fit started.')
@@ -358,9 +356,11 @@ for code in codes:
             end_time = timeit.default_timer()
             print(f'{datetime.now()}\t{code} @ {optimizer} @ Mep=2^{nb_epoch_exp} fit finished (took {end_time-start_time:1.3f} [s]).')
             
-            dump['exec'][code][nb_epoch][optimizer]['history'] = history.history
+            with open(f'train/cpu_code={code}_optimizer={optimizer}_epochs=2^{nb_epoch_exp}_train_map.json', 'w') as outfile:
+                json.dump(history.history, outfile)
+            # dump['exec'][code][nb_epoch][optimizer]['history'] = history.history
             
-            fig_opt, ax_opt = plt.subplots(1, 1, figsize=(16,9))
+            fig_opt, ax_opt = plt.subplots(1, 1, figsize=(11.75,8.25))
             ax_opt.plot(np.arange(0,nb_epoch), history.history['loss'], label='Loss', color='red')
             ax_opt.plot(np.arange(0,nb_epoch), history.history['ber'], label='BER', color='blue')
             ax_opt.grid(True, which='both')
@@ -370,11 +370,11 @@ for code in codes:
             ax_opt.set_xlim(0, nb_epoch)
             ax_opt.set_ylim(0, 1)
             ax_opt.set_title(code.capitalize() + ' code ($M_{ep}=2^{' + str(nb_epoch_exp) + '})$ - ' + optimizer)
-            fig_opt.savefig(f'training/cpu_code={code}_optimizer={optimizer}_epochs=2^{nb_epoch_exp}_loss_ber_map.png')
+            fig_opt.savefig(f'train/cpu_code={code}_optimizer={optimizer}_epochs=2^{nb_epoch_exp}_train_map.png')
             
-            with open(f'training/cpu_code={code}_optimizer={optimizer}_epochs=2^{nb_epoch_exp}_loss_ber_map.png', 'rb') as image_file_opt:
+            with open(f'train/cpu_code={code}_optimizer={optimizer}_epochs=2^{nb_epoch_exp}_train_map.png', 'rb') as image_file_opt:
                 encoded_string_opt = base64.b64encode(image_file_opt.read()).decode("utf-8")
-            dump['exec'][code][nb_epoch][optimizer]['history']['plot_base64'] = encoded_string_opt
+            dump['exec'][code][nb_epoch][optimizer]['train_plot_base64'] = encoded_string_opt
 
             ###########
             # Test NN #
@@ -470,15 +470,15 @@ for code in codes:
         ax_ans.set_xlim(SNR_dB_start_Eb, SNR_dB_stop_Eb)
         ax_ans.set_ylim(1e-5, 1e0)
         ax_ans.set_title(code.capitalize() + ' code ($M_{ep}=2^{' + str(nb_epoch_exp) + '})$')
-        fig_ans.savefig(f'cpu_code={code}_epochs=2^{nb_epoch_exp}_map.png')
+        fig_ans.savefig(f'cpu_code={code}_epochs=2^{nb_epoch_exp}_test_map.png')
         
         ################################
         # Persist current plot to JSON #
         ################################
         
-        with open(f'cpu_code={code}_epochs=2^{nb_epoch_exp}_map.png', 'rb') as image_file_ans:
+        with open(f'cpu_code={code}_epochs=2^{nb_epoch_exp}_test_map.png', 'rb') as image_file_ans:
             encoded_string_ans = base64.b64encode(image_file_ans.read()).decode("utf-8")
-        dump['exec'][code][nb_epoch]['plot_base64'] = encoded_string_ans
+        dump['exec'][code][nb_epoch]['test_plot_base64'] = encoded_string_ans
 
 
 # In[ ]:
