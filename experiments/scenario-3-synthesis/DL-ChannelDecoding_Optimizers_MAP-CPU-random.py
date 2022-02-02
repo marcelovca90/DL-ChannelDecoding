@@ -381,7 +381,7 @@ for code in codes:
             ###########
 
             test_batch = 1000  
-            num_words = 1000      # multiple of test_batch (era 2000000)
+            num_words = 1000000      # multiple of test_batch
 
             SNR_dB_start_Eb = 0
             SNR_dB_stop_Eb = 10
