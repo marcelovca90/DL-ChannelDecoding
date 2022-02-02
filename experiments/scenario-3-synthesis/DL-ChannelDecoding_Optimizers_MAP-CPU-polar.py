@@ -86,7 +86,7 @@ k = 8                                      # number of information bits
 N = 16                                     # code length
 train_SNR_Eb = {'polar' : 1, 'random' : 4} # training-Eb/No
 
-exponents = [10]                             # exponents of learning epochs (n)
+exponents = [20]                             # exponents of learning epochs (n)
 nb_epochs = [int(2**x) for x in exponents]   # number of learning epochs (2^n)
 codes = ['polar']                            # type of code ('random' or 'polar')
 design = [1024, 512, 256, 128, 64, 32]       # each list entry defines the number of nodes in a layer
