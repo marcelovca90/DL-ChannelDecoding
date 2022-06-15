@@ -1,0 +1,42 @@
+tensorflow
+
+TensorFlow version:  2.8.0
+
+Is GPU available? False
+
+Num GPUs Available:  0
+
+Physical Devices:  []
+Please install GPU version of TensorFlow.
+
+Local devices: [name: "/device:CPU:0"
+device_type: "CPU"
+memory_limit: 268435456
+locality {
+}
+incarnation: 1026171097880163721
+xla_global_id: -1
+]
+[18, 20, 22]
+[262144, 1048576, 4194304]
+Model: "sequential_4"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 128)               2176      
+                                                                 
+ decoder_1 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_2 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_3 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 12,776
+Trainable params: 12,776
+Non-trainable params: 0
+_________________________________________________________________
