@@ -1,0 +1,592 @@
+tensorflow
+
+TensorFlow version:  2.9.1
+
+Is GPU available? True
+
+Num GPUs Available:  1
+
+Physical Devices:  [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+Default GPU Device: /device:GPU:0
+
+Local devices: [name: "/device:CPU:0"
+device_type: "CPU"
+memory_limit: 268435456
+locality {
+}
+incarnation: 16913694710380286151
+xla_global_id: -1
+, name: "/device:GPU:0"
+device_type: "GPU"
+memory_limit: 22683648000
+locality {
+  bus_id: 1
+  links {
+  }
+}
+incarnation: 11296097755452001395
+physical_device_desc: "device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:09:00.0, compute capability: 8.6"
+xla_global_id: 416903419
+]
+[20]
+[1048576]
+Model: "sequential_4"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 256)               4352      
+                                                                 
+ decoder_1 (Dense)           (None, 128)               32896     
+                                                                 
+ decoder_2 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_3 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_4 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 47,848
+Trainable params: 47,848
+Non-trainable params: 0
+_________________________________________________________________
+2022-06-20 16:03:08.170401	polar @ Adadelta @ Mep=2^20 fit started.
+2022-06-20 17:02:07.991051	polar @ Adadelta @ Mep=2^20 fit finished (took 3539.826 [s]).
+2022-06-20 17:02:10.285012	test @ sigmas=[1.         0.93162278 0.86324555 0.79486833 0.72649111 0.65811388
+ 0.58973666 0.52135944 0.45298221 0.38460499 0.31622777]
+2022-06-20 17:02:10.285169	test @ sigmas(dB)=[ 0.          0.61519804  1.277313    1.99409613  2.77539396  3.63397895
+  4.58683749  5.65725523  6.87837702  8.29970172 10.        ]
+2022-06-20 17:03:39.299132	test @ sigma[0]=1.000	sigma_db[0]=0.000	nb_bits=16000000	nb_errors=2232954
+2022-06-20 17:05:14.038658	test @ sigma[1]=0.932	sigma_db[1]=0.615	nb_bits=16000000	nb_errors=1771386
+2022-06-20 17:06:43.799220	test @ sigma[2]=0.863	sigma_db[2]=1.277	nb_bits=16000000	nb_errors=1323940
+2022-06-20 17:08:13.476314	test @ sigma[3]=0.795	sigma_db[3]=1.994	nb_bits=16000000	nb_errors=910959
+2022-06-20 17:09:43.266677	test @ sigma[4]=0.726	sigma_db[4]=2.775	nb_bits=16000000	nb_errors=559873
+2022-06-20 17:11:13.156636	test @ sigma[5]=0.658	sigma_db[5]=3.634	nb_bits=16000000	nb_errors=294269
+2022-06-20 17:12:43.037097	test @ sigma[6]=0.590	sigma_db[6]=4.587	nb_bits=16000000	nb_errors=124670
+2022-06-20 17:14:13.023632	test @ sigma[7]=0.521	sigma_db[7]=5.657	nb_bits=16000000	nb_errors=38755
+2022-06-20 17:15:42.898211	test @ sigma[8]=0.453	sigma_db[8]=6.878	nb_bits=16000000	nb_errors=7547
+2022-06-20 17:17:12.662018	test @ sigma[9]=0.385	sigma_db[9]=8.300	nb_bits=16000000	nb_errors=745
+2022-06-20 17:18:42.661940	test @ sigma[10]=0.316	sigma_db[10]=10.000	nb_bits=16000000	nb_errors=32
+Model: "sequential_9"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 256)               4352      
+                                                                 
+ decoder_1 (Dense)           (None, 128)               32896     
+                                                                 
+ decoder_2 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_3 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_4 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 47,848
+Trainable params: 47,848
+Non-trainable params: 0
+_________________________________________________________________
+2022-06-20 17:18:42.730804	polar @ Adagrad @ Mep=2^20 fit started.
+2022-06-20 18:15:58.249424	polar @ Adagrad @ Mep=2^20 fit finished (took 3435.523 [s]).
+2022-06-20 18:16:00.490304	test @ sigmas=[1.         0.93162278 0.86324555 0.79486833 0.72649111 0.65811388
+ 0.58973666 0.52135944 0.45298221 0.38460499 0.31622777]
+2022-06-20 18:16:00.490451	test @ sigmas(dB)=[ 0.          0.61519804  1.277313    1.99409613  2.77539396  3.63397895
+  4.58683749  5.65725523  6.87837702  8.29970172 10.        ]
+2022-06-20 18:17:30.146374	test @ sigma[0]=1.000	sigma_db[0]=0.000	nb_bits=16000000	nb_errors=2082601
+2022-06-20 18:18:59.749314	test @ sigma[1]=0.932	sigma_db[1]=0.615	nb_bits=16000000	nb_errors=1614115
+2022-06-20 18:20:29.432290	test @ sigma[2]=0.863	sigma_db[2]=1.277	nb_bits=16000000	nb_errors=1165019
+2022-06-20 18:22:03.687132	test @ sigma[3]=0.795	sigma_db[3]=1.994	nb_bits=16000000	nb_errors=764440
+2022-06-20 18:23:33.386769	test @ sigma[4]=0.726	sigma_db[4]=2.775	nb_bits=16000000	nb_errors=436723
+2022-06-20 18:25:03.007183	test @ sigma[5]=0.658	sigma_db[5]=3.634	nb_bits=16000000	nb_errors=206379
+2022-06-20 18:26:32.635710	test @ sigma[6]=0.590	sigma_db[6]=4.587	nb_bits=16000000	nb_errors=73258
+2022-06-20 18:28:02.275517	test @ sigma[7]=0.521	sigma_db[7]=5.657	nb_bits=16000000	nb_errors=16911
+2022-06-20 18:29:31.843502	test @ sigma[8]=0.453	sigma_db[8]=6.878	nb_bits=16000000	nb_errors=1929
+2022-06-20 18:31:01.432605	test @ sigma[9]=0.385	sigma_db[9]=8.300	nb_bits=16000000	nb_errors=91
+2022-06-20 18:32:31.117151	test @ sigma[10]=0.316	sigma_db[10]=10.000	nb_bits=16000000	nb_errors=3
+Model: "sequential_14"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 256)               4352      
+                                                                 
+ decoder_1 (Dense)           (None, 128)               32896     
+                                                                 
+ decoder_2 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_3 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_4 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 47,848
+Trainable params: 47,848
+Non-trainable params: 0
+_________________________________________________________________
+2022-06-20 18:32:31.179709	polar @ Adam @ Mep=2^20 fit started.
+2022-06-20 19:31:24.591252	polar @ Adam @ Mep=2^20 fit finished (took 3533.415 [s]).
+2022-06-20 19:31:26.861389	test @ sigmas=[1.         0.93162278 0.86324555 0.79486833 0.72649111 0.65811388
+ 0.58973666 0.52135944 0.45298221 0.38460499 0.31622777]
+2022-06-20 19:31:26.861540	test @ sigmas(dB)=[ 0.          0.61519804  1.277313    1.99409613  2.77539396  3.63397895
+  4.58683749  5.65725523  6.87837702  8.29970172 10.        ]
+2022-06-20 19:32:55.952234	test @ sigma[0]=1.000	sigma_db[0]=0.000	nb_bits=16000000	nb_errors=2002840
+2022-06-20 19:34:24.844055	test @ sigma[1]=0.932	sigma_db[1]=0.615	nb_bits=16000000	nb_errors=1533335
+2022-06-20 19:35:54.006572	test @ sigma[2]=0.863	sigma_db[2]=1.277	nb_bits=16000000	nb_errors=1089473
+2022-06-20 19:37:23.127004	test @ sigma[3]=0.795	sigma_db[3]=1.994	nb_bits=16000000	nb_errors=698417
+2022-06-20 19:38:57.154019	test @ sigma[4]=0.726	sigma_db[4]=2.775	nb_bits=16000000	nb_errors=387891
+2022-06-20 19:40:26.243472	test @ sigma[5]=0.658	sigma_db[5]=3.634	nb_bits=16000000	nb_errors=175413
+2022-06-20 19:41:55.396684	test @ sigma[6]=0.590	sigma_db[6]=4.587	nb_bits=16000000	nb_errors=58217
+2022-06-20 19:43:24.614359	test @ sigma[7]=0.521	sigma_db[7]=5.657	nb_bits=16000000	nb_errors=12043
+2022-06-20 19:44:53.506412	test @ sigma[8]=0.453	sigma_db[8]=6.878	nb_bits=16000000	nb_errors=1108
+2022-06-20 19:46:22.549197	test @ sigma[9]=0.385	sigma_db[9]=8.300	nb_bits=16000000	nb_errors=21
+2022-06-20 19:47:51.684847	test @ sigma[10]=0.316	sigma_db[10]=10.000	nb_bits=16000000	nb_errors=0
+Model: "sequential_19"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 256)               4352      
+                                                                 
+ decoder_1 (Dense)           (None, 128)               32896     
+                                                                 
+ decoder_2 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_3 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_4 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 47,848
+Trainable params: 47,848
+Non-trainable params: 0
+_________________________________________________________________
+2022-06-20 19:47:51.750287	polar @ Adamax @ Mep=2^20 fit started.
+2022-06-20 20:48:08.117822	polar @ Adamax @ Mep=2^20 fit finished (took 3616.370 [s]).
+2022-06-20 20:48:10.389463	test @ sigmas=[1.         0.93162278 0.86324555 0.79486833 0.72649111 0.65811388
+ 0.58973666 0.52135944 0.45298221 0.38460499 0.31622777]
+2022-06-20 20:48:10.389635	test @ sigmas(dB)=[ 0.          0.61519804  1.277313    1.99409613  2.77539396  3.63397895
+  4.58683749  5.65725523  6.87837702  8.29970172 10.        ]
+2022-06-20 20:49:40.338357	test @ sigma[0]=1.000	sigma_db[0]=0.000	nb_bits=16000000	nb_errors=1993078
+2022-06-20 20:51:10.437876	test @ sigma[1]=0.932	sigma_db[1]=0.615	nb_bits=16000000	nb_errors=1524592
+2022-06-20 20:52:40.679909	test @ sigma[2]=0.863	sigma_db[2]=1.277	nb_bits=16000000	nb_errors=1080759
+2022-06-20 20:54:10.836893	test @ sigma[3]=0.795	sigma_db[3]=1.994	nb_bits=16000000	nb_errors=691281
+2022-06-20 20:55:41.097165	test @ sigma[4]=0.726	sigma_db[4]=2.775	nb_bits=16000000	nb_errors=383160
+2022-06-20 20:57:16.079610	test @ sigma[5]=0.658	sigma_db[5]=3.634	nb_bits=16000000	nb_errors=172794
+2022-06-20 20:58:46.337484	test @ sigma[6]=0.590	sigma_db[6]=4.587	nb_bits=16000000	nb_errors=56451
+2022-06-20 21:00:16.559810	test @ sigma[7]=0.521	sigma_db[7]=5.657	nb_bits=16000000	nb_errors=11440
+2022-06-20 21:01:46.905618	test @ sigma[8]=0.453	sigma_db[8]=6.878	nb_bits=16000000	nb_errors=972
+2022-06-20 21:03:17.088458	test @ sigma[9]=0.385	sigma_db[9]=8.300	nb_bits=16000000	nb_errors=21
+2022-06-20 21:04:47.226155	test @ sigma[10]=0.316	sigma_db[10]=10.000	nb_bits=16000000	nb_errors=0
+Model: "sequential_24"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 256)               4352      
+                                                                 
+ decoder_1 (Dense)           (None, 128)               32896     
+                                                                 
+ decoder_2 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_3 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_4 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 47,848
+Trainable params: 47,848
+Non-trainable params: 0
+_________________________________________________________________
+2022-06-20 21:04:47.288652	polar @ Nadam @ Mep=2^20 fit started.
+2022-06-20 22:50:38.970402	polar @ Nadam @ Mep=2^20 fit finished (took 6351.685 [s]).
+2022-06-20 22:50:41.452655	test @ sigmas=[1.         0.93162278 0.86324555 0.79486833 0.72649111 0.65811388
+ 0.58973666 0.52135944 0.45298221 0.38460499 0.31622777]
+2022-06-20 22:50:41.452805	test @ sigmas(dB)=[ 0.          0.61519804  1.277313    1.99409613  2.77539396  3.63397895
+  4.58683749  5.65725523  6.87837702  8.29970172 10.        ]
+2022-06-20 22:52:10.051973	test @ sigma[0]=1.000	sigma_db[0]=0.000	nb_bits=16000000	nb_errors=1999964
+2022-06-20 22:53:38.972158	test @ sigma[1]=0.932	sigma_db[1]=0.615	nb_bits=16000000	nb_errors=1530744
+2022-06-20 22:55:07.590497	test @ sigma[2]=0.863	sigma_db[2]=1.277	nb_bits=16000000	nb_errors=1085717
+2022-06-20 22:56:36.483232	test @ sigma[3]=0.795	sigma_db[3]=1.994	nb_bits=16000000	nb_errors=694977
+2022-06-20 22:58:05.303460	test @ sigma[4]=0.726	sigma_db[4]=2.775	nb_bits=16000000	nb_errors=385636
+2022-06-20 22:59:34.191187	test @ sigma[5]=0.658	sigma_db[5]=3.634	nb_bits=16000000	nb_errors=174141
+2022-06-20 23:01:08.602164	test @ sigma[6]=0.590	sigma_db[6]=4.587	nb_bits=16000000	nb_errors=57648
+2022-06-20 23:02:37.474593	test @ sigma[7]=0.521	sigma_db[7]=5.657	nb_bits=16000000	nb_errors=11715
+2022-06-20 23:04:06.547353	test @ sigma[8]=0.453	sigma_db[8]=6.878	nb_bits=16000000	nb_errors=1045
+2022-06-20 23:05:35.534094	test @ sigma[9]=0.385	sigma_db[9]=8.300	nb_bits=16000000	nb_errors=25
+2022-06-20 23:07:04.573587	test @ sigma[10]=0.316	sigma_db[10]=10.000	nb_bits=16000000	nb_errors=0
+Model: "sequential_29"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 256)               4352      
+                                                                 
+ decoder_1 (Dense)           (None, 128)               32896     
+                                                                 
+ decoder_2 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_3 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_4 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 47,848
+Trainable params: 47,848
+Non-trainable params: 0
+_________________________________________________________________
+2022-06-20 23:07:04.639994	polar @ RMSprop @ Mep=2^20 fit started.
+2022-06-21 00:14:12.419718	polar @ RMSprop @ Mep=2^20 fit finished (took 4027.807 [s]).
+2022-06-21 00:14:14.672094	test @ sigmas=[1.         0.93162278 0.86324555 0.79486833 0.72649111 0.65811388
+ 0.58973666 0.52135944 0.45298221 0.38460499 0.31622777]
+2022-06-21 00:14:14.672248	test @ sigmas(dB)=[ 0.          0.61519804  1.277313    1.99409613  2.77539396  3.63397895
+  4.58683749  5.65725523  6.87837702  8.29970172 10.        ]
+2022-06-21 00:15:44.251880	test @ sigma[0]=1.000	sigma_db[0]=0.000	nb_bits=16000000	nb_errors=2002929
+2022-06-21 00:17:16.764245	test @ sigma[1]=0.932	sigma_db[1]=0.615	nb_bits=16000000	nb_errors=1533398
+2022-06-21 00:18:48.730799	test @ sigma[2]=0.863	sigma_db[2]=1.277	nb_bits=16000000	nb_errors=1088691
+2022-06-21 00:20:18.609667	test @ sigma[3]=0.795	sigma_db[3]=1.994	nb_bits=16000000	nb_errors=697707
+2022-06-21 00:21:48.245841	test @ sigma[4]=0.726	sigma_db[4]=2.775	nb_bits=16000000	nb_errors=386879
+2022-06-21 00:23:17.942494	test @ sigma[5]=0.658	sigma_db[5]=3.634	nb_bits=16000000	nb_errors=173651
+2022-06-21 00:24:47.570405	test @ sigma[6]=0.590	sigma_db[6]=4.587	nb_bits=16000000	nb_errors=57171
+2022-06-21 00:26:17.410253	test @ sigma[7]=0.521	sigma_db[7]=5.657	nb_bits=16000000	nb_errors=11298
+2022-06-21 00:27:47.115189	test @ sigma[8]=0.453	sigma_db[8]=6.878	nb_bits=16000000	nb_errors=970
+2022-06-21 00:29:16.655993	test @ sigma[9]=0.385	sigma_db[9]=8.300	nb_bits=16000000	nb_errors=17
+2022-06-21 00:30:46.484745	test @ sigma[10]=0.316	sigma_db[10]=10.000	nb_bits=16000000	nb_errors=0
+Model: "sequential_34"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 256)               4352      
+                                                                 
+ decoder_1 (Dense)           (None, 128)               32896     
+                                                                 
+ decoder_2 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_3 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_4 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 47,848
+Trainable params: 47,848
+Non-trainable params: 0
+_________________________________________________________________
+2022-06-21 00:30:46.550649	polar @ SGD @ Mep=2^20 fit started.
+2022-06-21 01:26:50.497576	polar @ SGD @ Mep=2^20 fit finished (took 3363.963 [s]).
+2022-06-21 01:26:52.797707	test @ sigmas=[1.         0.93162278 0.86324555 0.79486833 0.72649111 0.65811388
+ 0.58973666 0.52135944 0.45298221 0.38460499 0.31622777]
+2022-06-21 01:26:52.797859	test @ sigmas(dB)=[ 0.          0.61519804  1.277313    1.99409613  2.77539396  3.63397895
+  4.58683749  5.65725523  6.87837702  8.29970172 10.        ]
+2022-06-21 01:28:21.699576	test @ sigma[0]=1.000	sigma_db[0]=0.000	nb_bits=16000000	nb_errors=2141404
+2022-06-21 01:29:50.388021	test @ sigma[1]=0.932	sigma_db[1]=0.615	nb_bits=16000000	nb_errors=1676374
+2022-06-21 01:31:19.220010	test @ sigma[2]=0.863	sigma_db[2]=1.277	nb_bits=16000000	nb_errors=1228788
+2022-06-21 01:32:47.909171	test @ sigma[3]=0.795	sigma_db[3]=1.994	nb_bits=16000000	nb_errors=823149
+2022-06-21 01:34:16.797493	test @ sigma[4]=0.726	sigma_db[4]=2.775	nb_bits=16000000	nb_errors=487525
+2022-06-21 01:35:50.889421	test @ sigma[5]=0.658	sigma_db[5]=3.634	nb_bits=16000000	nb_errors=242953
+2022-06-21 01:37:19.553721	test @ sigma[6]=0.590	sigma_db[6]=4.587	nb_bits=16000000	nb_errors=95000
+2022-06-21 01:38:48.383486	test @ sigma[7]=0.521	sigma_db[7]=5.657	nb_bits=16000000	nb_errors=26204
+2022-06-21 01:40:17.168987	test @ sigma[8]=0.453	sigma_db[8]=6.878	nb_bits=16000000	nb_errors=4296
+2022-06-21 01:41:46.094207	test @ sigma[9]=0.385	sigma_db[9]=8.300	nb_bits=16000000	nb_errors=402
+2022-06-21 01:43:15.010422	test @ sigma[10]=0.316	sigma_db[10]=10.000	nb_bits=16000000	nb_errors=15
+Model: "sequential_39"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 256)               4352      
+                                                                 
+ decoder_1 (Dense)           (None, 128)               32896     
+                                                                 
+ decoder_2 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_3 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_4 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 47,848
+Trainable params: 47,848
+Non-trainable params: 0
+_________________________________________________________________
+2022-06-21 01:43:15.453990	random @ Adadelta @ Mep=2^20 fit started.
+2022-06-21 02:42:21.460484	random @ Adadelta @ Mep=2^20 fit finished (took 3546.018 [s]).
+2022-06-21 02:42:23.683830	test @ sigmas=[1.         0.93162278 0.86324555 0.79486833 0.72649111 0.65811388
+ 0.58973666 0.52135944 0.45298221 0.38460499 0.31622777]
+2022-06-21 02:42:23.683982	test @ sigmas(dB)=[ 0.          0.61519804  1.277313    1.99409613  2.77539396  3.63397895
+  4.58683749  5.65725523  6.87837702  8.29970172 10.        ]
+2022-06-21 02:43:34.834421	test @ sigma[0]=1.000	sigma_db[0]=0.000	nb_bits=16000000	nb_errors=3312165
+2022-06-21 02:44:46.294300	test @ sigma[1]=0.932	sigma_db[1]=0.615	nb_bits=16000000	nb_errors=2806105
+2022-06-21 02:45:57.553276	test @ sigma[2]=0.863	sigma_db[2]=1.277	nb_bits=16000000	nb_errors=2271481
+2022-06-21 02:47:09.028437	test @ sigma[3]=0.795	sigma_db[3]=1.994	nb_bits=16000000	nb_errors=1728714
+2022-06-21 02:48:20.432464	test @ sigma[4]=0.726	sigma_db[4]=2.775	nb_bits=16000000	nb_errors=1207468
+2022-06-21 02:49:32.035119	test @ sigma[5]=0.658	sigma_db[5]=3.634	nb_bits=16000000	nb_errors=747686
+2022-06-21 02:50:43.459531	test @ sigma[6]=0.590	sigma_db[6]=4.587	nb_bits=16000000	nb_errors=389548
+2022-06-21 02:51:55.425813	test @ sigma[7]=0.521	sigma_db[7]=5.657	nb_bits=16000000	nb_errors=156584
+2022-06-21 02:53:12.356890	test @ sigma[8]=0.453	sigma_db[8]=6.878	nb_bits=16000000	nb_errors=42914
+2022-06-21 02:54:24.164650	test @ sigma[9]=0.385	sigma_db[9]=8.300	nb_bits=16000000	nb_errors=6556
+2022-06-21 02:55:35.656915	test @ sigma[10]=0.316	sigma_db[10]=10.000	nb_bits=16000000	nb_errors=419
+Model: "sequential_44"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 256)               4352      
+                                                                 
+ decoder_1 (Dense)           (None, 128)               32896     
+                                                                 
+ decoder_2 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_3 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_4 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 47,848
+Trainable params: 47,848
+Non-trainable params: 0
+_________________________________________________________________
+2022-06-21 02:55:35.719066	random @ Adagrad @ Mep=2^20 fit started.
+2022-06-21 03:52:38.127539	random @ Adagrad @ Mep=2^20 fit finished (took 3422.416 [s]).
+2022-06-21 03:52:40.372825	test @ sigmas=[1.         0.93162278 0.86324555 0.79486833 0.72649111 0.65811388
+ 0.58973666 0.52135944 0.45298221 0.38460499 0.31622777]
+2022-06-21 03:52:40.372981	test @ sigmas(dB)=[ 0.          0.61519804  1.277313    1.99409613  2.77539396  3.63397895
+  4.58683749  5.65725523  6.87837702  8.29970172 10.        ]
+2022-06-21 03:53:52.843934	test @ sigma[0]=1.000	sigma_db[0]=0.000	nb_bits=16000000	nb_errors=3136810
+2022-06-21 03:55:11.271676	test @ sigma[1]=0.932	sigma_db[1]=0.615	nb_bits=16000000	nb_errors=2612679
+2022-06-21 03:56:23.612212	test @ sigma[2]=0.863	sigma_db[2]=1.277	nb_bits=16000000	nb_errors=2066268
+2022-06-21 03:57:35.825932	test @ sigma[3]=0.795	sigma_db[3]=1.994	nb_bits=16000000	nb_errors=1521559
+2022-06-21 03:58:48.104633	test @ sigma[4]=0.726	sigma_db[4]=2.775	nb_bits=16000000	nb_errors=1016934
+2022-06-21 04:00:00.220939	test @ sigma[5]=0.658	sigma_db[5]=3.634	nb_bits=16000000	nb_errors=592921
+2022-06-21 04:01:12.225942	test @ sigma[6]=0.590	sigma_db[6]=4.587	nb_bits=16000000	nb_errors=282256
+2022-06-21 04:02:24.516543	test @ sigma[7]=0.521	sigma_db[7]=5.657	nb_bits=16000000	nb_errors=100528
+2022-06-21 04:03:36.672111	test @ sigma[8]=0.453	sigma_db[8]=6.878	nb_bits=16000000	nb_errors=23755
+2022-06-21 04:04:48.920116	test @ sigma[9]=0.385	sigma_db[9]=8.300	nb_bits=16000000	nb_errors=2956
+2022-06-21 04:06:01.122184	test @ sigma[10]=0.316	sigma_db[10]=10.000	nb_bits=16000000	nb_errors=169
+Model: "sequential_49"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 256)               4352      
+                                                                 
+ decoder_1 (Dense)           (None, 128)               32896     
+                                                                 
+ decoder_2 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_3 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_4 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 47,848
+Trainable params: 47,848
+Non-trainable params: 0
+_________________________________________________________________
+2022-06-21 04:06:01.189989	random @ Adam @ Mep=2^20 fit started.
+2022-06-21 05:04:43.856488	random @ Adam @ Mep=2^20 fit finished (took 3522.671 [s]).
+2022-06-21 05:04:46.100418	test @ sigmas=[1.         0.93162278 0.86324555 0.79486833 0.72649111 0.65811388
+ 0.58973666 0.52135944 0.45298221 0.38460499 0.31622777]
+2022-06-21 05:04:46.100569	test @ sigmas(dB)=[ 0.          0.61519804  1.277313    1.99409613  2.77539396  3.63397895
+  4.58683749  5.65725523  6.87837702  8.29970172 10.        ]
+2022-06-21 05:05:58.841179	test @ sigma[0]=1.000	sigma_db[0]=0.000	nb_bits=16000000	nb_errors=2707445
+2022-06-21 05:07:11.218704	test @ sigma[1]=0.932	sigma_db[1]=0.615	nb_bits=16000000	nb_errors=2120114
+2022-06-21 05:08:23.997172	test @ sigma[2]=0.863	sigma_db[2]=1.277	nb_bits=16000000	nb_errors=1544197
+2022-06-21 05:09:36.421799	test @ sigma[3]=0.795	sigma_db[3]=1.994	nb_bits=16000000	nb_errors=1021132
+2022-06-21 05:10:49.153619	test @ sigma[4]=0.726	sigma_db[4]=2.775	nb_bits=16000000	nb_errors=591445
+2022-06-21 05:12:07.971064	test @ sigma[5]=0.658	sigma_db[5]=3.634	nb_bits=16000000	nb_errors=288154
+2022-06-21 05:13:20.735009	test @ sigma[6]=0.590	sigma_db[6]=4.587	nb_bits=16000000	nb_errors=111748
+2022-06-21 05:14:33.246818	test @ sigma[7]=0.521	sigma_db[7]=5.657	nb_bits=16000000	nb_errors=32527
+2022-06-21 05:15:45.655300	test @ sigma[8]=0.453	sigma_db[8]=6.878	nb_bits=16000000	nb_errors=6671
+2022-06-21 05:16:58.447526	test @ sigma[9]=0.385	sigma_db[9]=8.300	nb_bits=16000000	nb_errors=815
+2022-06-21 05:18:10.986390	test @ sigma[10]=0.316	sigma_db[10]=10.000	nb_bits=16000000	nb_errors=23
+Model: "sequential_54"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 256)               4352      
+                                                                 
+ decoder_1 (Dense)           (None, 128)               32896     
+                                                                 
+ decoder_2 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_3 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_4 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 47,848
+Trainable params: 47,848
+Non-trainable params: 0
+_________________________________________________________________
+2022-06-21 05:18:11.054149	random @ Adamax @ Mep=2^20 fit started.
+2022-06-21 06:18:28.693599	random @ Adamax @ Mep=2^20 fit finished (took 3617.644 [s]).
+2022-06-21 06:18:30.941279	test @ sigmas=[1.         0.93162278 0.86324555 0.79486833 0.72649111 0.65811388
+ 0.58973666 0.52135944 0.45298221 0.38460499 0.31622777]
+2022-06-21 06:18:30.941441	test @ sigmas(dB)=[ 0.          0.61519804  1.277313    1.99409613  2.77539396  3.63397895
+  4.58683749  5.65725523  6.87837702  8.29970172 10.        ]
+2022-06-21 06:19:43.900014	test @ sigma[0]=1.000	sigma_db[0]=0.000	nb_bits=16000000	nb_errors=2749475
+2022-06-21 06:20:56.511938	test @ sigma[1]=0.932	sigma_db[1]=0.615	nb_bits=16000000	nb_errors=2187097
+2022-06-21 06:22:09.260304	test @ sigma[2]=0.863	sigma_db[2]=1.277	nb_bits=16000000	nb_errors=1626840
+2022-06-21 06:23:21.861424	test @ sigma[3]=0.795	sigma_db[3]=1.994	nb_bits=16000000	nb_errors=1102200
+2022-06-21 06:24:34.508104	test @ sigma[4]=0.726	sigma_db[4]=2.775	nb_bits=16000000	nb_errors=658500
+2022-06-21 06:25:47.303289	test @ sigma[5]=0.658	sigma_db[5]=3.634	nb_bits=16000000	nb_errors=330334
+2022-06-21 06:26:59.664700	test @ sigma[6]=0.590	sigma_db[6]=4.587	nb_bits=16000000	nb_errors=131022
+2022-06-21 06:28:12.190347	test @ sigma[7]=0.521	sigma_db[7]=5.657	nb_bits=16000000	nb_errors=37598
+2022-06-21 06:29:30.906201	test @ sigma[8]=0.453	sigma_db[8]=6.878	nb_bits=16000000	nb_errors=7183
+2022-06-21 06:30:43.875540	test @ sigma[9]=0.385	sigma_db[9]=8.300	nb_bits=16000000	nb_errors=865
+2022-06-21 06:31:56.170054	test @ sigma[10]=0.316	sigma_db[10]=10.000	nb_bits=16000000	nb_errors=29
+Model: "sequential_59"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 256)               4352      
+                                                                 
+ decoder_1 (Dense)           (None, 128)               32896     
+                                                                 
+ decoder_2 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_3 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_4 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 47,848
+Trainable params: 47,848
+Non-trainable params: 0
+_________________________________________________________________
+2022-06-21 06:31:56.232651	random @ Nadam @ Mep=2^20 fit started.
+2022-06-21 08:00:29.955568	random @ Nadam @ Mep=2^20 fit finished (took 5313.727 [s]).
+2022-06-21 08:00:32.212929	test @ sigmas=[1.         0.93162278 0.86324555 0.79486833 0.72649111 0.65811388
+ 0.58973666 0.52135944 0.45298221 0.38460499 0.31622777]
+2022-06-21 08:00:32.213082	test @ sigmas(dB)=[ 0.          0.61519804  1.277313    1.99409613  2.77539396  3.63397895
+  4.58683749  5.65725523  6.87837702  8.29970172 10.        ]
+2022-06-21 08:01:43.911238	test @ sigma[0]=1.000	sigma_db[0]=0.000	nb_bits=16000000	nb_errors=2710482
+2022-06-21 08:03:02.118186	test @ sigma[1]=0.932	sigma_db[1]=0.615	nb_bits=16000000	nb_errors=2123803
+2022-06-21 08:04:13.973295	test @ sigma[2]=0.863	sigma_db[2]=1.277	nb_bits=16000000	nb_errors=1549451
+2022-06-21 08:05:25.748683	test @ sigma[3]=0.795	sigma_db[3]=1.994	nb_bits=16000000	nb_errors=1026332
+2022-06-21 08:06:37.803845	test @ sigma[4]=0.726	sigma_db[4]=2.775	nb_bits=16000000	nb_errors=596899
+2022-06-21 08:07:49.579772	test @ sigma[5]=0.658	sigma_db[5]=3.634	nb_bits=16000000	nb_errors=292482
+2022-06-21 08:09:01.348278	test @ sigma[6]=0.590	sigma_db[6]=4.587	nb_bits=16000000	nb_errors=113166
+2022-06-21 08:10:13.313043	test @ sigma[7]=0.521	sigma_db[7]=5.657	nb_bits=16000000	nb_errors=33436
+2022-06-21 08:11:25.043177	test @ sigma[8]=0.453	sigma_db[8]=6.878	nb_bits=16000000	nb_errors=7131
+2022-06-21 08:12:36.858804	test @ sigma[9]=0.385	sigma_db[9]=8.300	nb_bits=16000000	nb_errors=958
+2022-06-21 08:13:48.830966	test @ sigma[10]=0.316	sigma_db[10]=10.000	nb_bits=16000000	nb_errors=76
+Model: "sequential_64"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 256)               4352      
+                                                                 
+ decoder_1 (Dense)           (None, 128)               32896     
+                                                                 
+ decoder_2 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_3 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_4 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 47,848
+Trainable params: 47,848
+Non-trainable params: 0
+_________________________________________________________________
+2022-06-21 08:13:48.899280	random @ RMSprop @ Mep=2^20 fit started.
+2022-06-21 09:20:57.620547	random @ RMSprop @ Mep=2^20 fit finished (took 4028.725 [s]).
+2022-06-21 09:20:59.911385	test @ sigmas=[1.         0.93162278 0.86324555 0.79486833 0.72649111 0.65811388
+ 0.58973666 0.52135944 0.45298221 0.38460499 0.31622777]
+2022-06-21 09:20:59.911545	test @ sigmas(dB)=[ 0.          0.61519804  1.277313    1.99409613  2.77539396  3.63397895
+  4.58683749  5.65725523  6.87837702  8.29970172 10.        ]
+2022-06-21 09:22:11.370514	test @ sigma[0]=1.000	sigma_db[0]=0.000	nb_bits=16000000	nb_errors=2878940
+2022-06-21 09:23:22.978058	test @ sigma[1]=0.932	sigma_db[1]=0.615	nb_bits=16000000	nb_errors=2326314
+2022-06-21 09:24:34.460036	test @ sigma[2]=0.863	sigma_db[2]=1.277	nb_bits=16000000	nb_errors=1763612
+2022-06-21 09:25:45.933240	test @ sigma[3]=0.795	sigma_db[3]=1.994	nb_bits=16000000	nb_errors=1228098
+2022-06-21 09:26:57.615821	test @ sigma[4]=0.726	sigma_db[4]=2.775	nb_bits=16000000	nb_errors=758954
+2022-06-21 09:28:09.183386	test @ sigma[5]=0.658	sigma_db[5]=3.634	nb_bits=16000000	nb_errors=396588
+2022-06-21 09:29:20.891418	test @ sigma[6]=0.590	sigma_db[6]=4.587	nb_bits=16000000	nb_errors=163774
+2022-06-21 09:30:32.401413	test @ sigma[7]=0.521	sigma_db[7]=5.657	nb_bits=16000000	nb_errors=49281
+2022-06-21 09:31:44.244263	test @ sigma[8]=0.453	sigma_db[8]=6.878	nb_bits=16000000	nb_errors=9626
+2022-06-21 09:32:55.883973	test @ sigma[9]=0.385	sigma_db[9]=8.300	nb_bits=16000000	nb_errors=1105
+2022-06-21 09:34:07.512164	test @ sigma[10]=0.316	sigma_db[10]=10.000	nb_bits=16000000	nb_errors=41
+Model: "sequential_69"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ modulator (Lambda)          (None, 16)                0         
+                                                                 
+ noise (Lambda)              (None, 16)                0         
+                                                                 
+ decoder_0 (Dense)           (None, 256)               4352      
+                                                                 
+ decoder_1 (Dense)           (None, 128)               32896     
+                                                                 
+ decoder_2 (Dense)           (None, 64)                8256      
+                                                                 
+ decoder_3 (Dense)           (None, 32)                2080      
+                                                                 
+ decoder_4 (Dense)           (None, 8)                 264       
+                                                                 
+=================================================================
+Total params: 47,848
+Trainable params: 47,848
+Non-trainable params: 0
+_________________________________________________________________
+2022-06-21 09:34:07.574360	random @ SGD @ Mep=2^20 fit started.
+2022-06-21 10:30:46.049876	random @ SGD @ Mep=2^20 fit finished (took 3398.478 [s]).
+2022-06-21 10:30:48.246779	test @ sigmas=[1.         0.93162278 0.86324555 0.79486833 0.72649111 0.65811388
+ 0.58973666 0.52135944 0.45298221 0.38460499 0.31622777]
+2022-06-21 10:30:48.246931	test @ sigmas(dB)=[ 0.          0.61519804  1.277313    1.99409613  2.77539396  3.63397895
+  4.58683749  5.65725523  6.87837702  8.29970172 10.        ]
+2022-06-21 10:31:57.516243	test @ sigma[0]=1.000	sigma_db[0]=0.000	nb_bits=16000000	nb_errors=3251351
+2022-06-21 10:33:06.993483	test @ sigma[1]=0.932	sigma_db[1]=0.615	nb_bits=16000000	nb_errors=2737702
+2022-06-21 10:34:16.636995	test @ sigma[2]=0.863	sigma_db[2]=1.277	nb_bits=16000000	nb_errors=2198878
+2022-06-21 10:35:27.077838	test @ sigma[3]=0.795	sigma_db[3]=1.994	nb_bits=16000000	nb_errors=1654654
+2022-06-21 10:36:36.598701	test @ sigma[4]=0.726	sigma_db[4]=2.775	nb_bits=16000000	nb_errors=1137702
+2022-06-21 10:37:47.374524	test @ sigma[5]=0.658	sigma_db[5]=3.634	nb_bits=16000000	nb_errors=689251
+2022-06-21 10:39:02.750494	test @ sigma[6]=0.590	sigma_db[6]=4.587	nb_bits=16000000	nb_errors=347214
+2022-06-21 10:40:12.413607	test @ sigma[7]=0.521	sigma_db[7]=5.657	nb_bits=16000000	nb_errors=133654
+2022-06-21 10:41:22.210026	test @ sigma[8]=0.453	sigma_db[8]=6.878	nb_bits=16000000	nb_errors=34436
+2022-06-21 10:42:31.901358	test @ sigma[9]=0.385	sigma_db[9]=8.300	nb_bits=16000000	nb_errors=4933
+2022-06-21 10:43:41.485560	test @ sigma[10]=0.316	sigma_db[10]=10.000	nb_bits=16000000	nb_errors=256
