@@ -1,7 +1,7 @@
 from datetime import datetime,timedelta
 import json
 
-base_folder = '../experiments/scenario-9-sbrt-timed-08M'
+base_folder = '../experiments/scenario-9-sbrt-timed-16M'
 
 log_filenames = [
     base_folder + '/baseline/test.log',
@@ -11,17 +11,17 @@ log_filenames = [
     base_folder + '/by-topology-6-layers/DL-CD-MAP-GPU-6L.log',
 ]
 
-code = ''
-optimizer = ''
-nb_epoch = ''
-fit_time = ''
-pred_time_start = ''
-pred_time_end = ''
-pred_time = ''
-bers = []
-ans = {}
-
 for filename in log_filenames:
+    
+    code = ''
+    optimizer = ''
+    nb_epoch = ''
+    fit_time = ''
+    pred_time_start = ''
+    pred_time_end = ''
+    pred_time = ''
+    bers = []
+    ans = {}
     
     with open(filename) as in_file:
         for line in in_file:
@@ -38,10 +38,6 @@ for filename in log_filenames:
                 ans[code][nb_epoch][optimizer]['fit_time'] = fit_time
             elif 'test @ sigmas(dB)' in line:
                 pred_time_start = datetime.strptime(parts[0] + ' ' + parts[1], '%Y-%m-%d %H:%M:%S.%f')
-            elif 'test @ sigma[10]' in line:
-                pred_time_end = datetime.strptime(parts[0] + ' ' + parts[1], '%Y-%m-%d %H:%M:%S.%f')
-                pred_time = pred_time_end - pred_time_start
-                ans[code][nb_epoch][optimizer]['pred_time'] = pred_time
             elif 'nb_bits' in line:
                 sigma_db = float(parts[5].split('=')[1])
                 nb_bits = float(parts[6].split('=')[1])
@@ -50,6 +46,10 @@ for filename in log_filenames:
                 ans[code][nb_epoch][optimizer]['x'].append(sigma_db)
                 ans[code][nb_epoch][optimizer].setdefault('y', [])
                 ans[code][nb_epoch][optimizer]['y'].append(nb_errors/nb_bits)
+                if 'test @ sigma[10]' in line:
+                    pred_time_end = datetime.strptime(parts[0] + ' ' + parts[1], '%Y-%m-%d %H:%M:%S.%f')
+                    pred_time = pred_time_end - pred_time_start
+                    ans[code][nb_epoch][optimizer]['pred_time'] = pred_time
 
     with open(filename.replace('.log','.json'), 'w') as out_file:
         json.dump(ans, out_file, indent=4, sort_keys=True, default=str)
