@@ -46,6 +46,7 @@ import pandas as pd
 import sys
 import tensorflow as tf_tmp
 import timeit
+import os
 #get_ipython().run_line_magic('matplotlib', 'inline')
 print(K.backend())
 
@@ -262,6 +263,8 @@ dump['sys'] = {}
 dump['meta'] = {}
 dump['meta']['start_time'] = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
 dump['exec'] = {}
+
+os.makedirs(f"./train", exist_ok=True)
 
 for code in codes:
     
