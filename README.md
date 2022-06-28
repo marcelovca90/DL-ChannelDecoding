@@ -6,7 +6,7 @@ Marcelo Vinícius Cysneiros Aragão, Samuel Baraldi Mafra e Felipe Augusto Perei
 
 	docker pull tensorflow/tensorflow:latest-gpu
 	docker run --gpus all -it tensorflow/tensorflow:latest-gpu bash
-	apt update && apt install git vim wget -y
+	apt update && apt install git -y
 	git clone https://github.com/marcelovca90/DL-ChannelDecoding.git
 	cd DL-ChannelDecoding/scripts
 	pip install matplotlib pandas
