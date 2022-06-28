@@ -1,6 +1,5 @@
 # Melhorando o Treinamento e a Topologia de um Decodificador de Canal baseado em Redes Neurais
 
--
 Marcelo Vinícius Cysneiros Aragão, Samuel Baraldi Mafra e Felipe Augusto Pereira de Figueiredo (baseado em GRUBER, Tobias et al. [On deep learning-based channel decoding.](https://github.com/gruberto/DL-ChannelDecoding) In: 2017 51st Annual Conference on Information Sciences and Systems (CISS). IEEE, 2017. p. 1-6.)
 
 ### Executando as simulações
@@ -13,7 +12,7 @@ Marcelo Vinícius Cysneiros Aragão, Samuel Baraldi Mafra e Felipe Augusto Perei
 	pip install matplotlib pandas
 	./run.sh
 
-##### Saída de exemplo:
+#### Saída de exemplo:
 
 	Model: "sequential_14"
 	_________________________________________________________________
@@ -60,6 +59,6 @@ Marcelo Vinícius Cysneiros Aragão, Samuel Baraldi Mafra e Felipe Augusto Perei
 	python proc4paper-txt.py
 	python proc4paper-json.py
 
-##### Saída de exemplo:
+#### Saída de exemplo:
 
-![cpu_code=random_epochs=2^18_map](./experiments/scenario-9-sbrt-timed-16M/cpu_code=random_epochs=2^18_map.png "cpu_code=random_epochs=2^18_map")
+![cpu_code=random_epochs=2^18_map](https://raw.githubusercontent.com/marcelovca90/DL-ChannelDecoding/master/experiments/scenario-9-sbrt-timed-16M/by-epoch/paper/png/cpu_code%3Drandom_epochs%3D2%5E18_map.png "cpu_code=random_epochs=2^18_map")
